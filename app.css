@@ -1,0 +1,334 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    flex-flow: row wrap;
+    background-color: #ced4da;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    height: 2em;
+}
+
+#create-to-do {
+    background-color: #023047;
+    max-width: 23vw;
+    height: 100vh;
+    padding: 1.5em;
+    position: fixed;
+}
+
+#menu {
+    display: flex;
+    justify-content: end;
+    display: none;
+}
+
+#menu:hover {
+    cursor: pointer;
+}
+
+#create-to-do label {
+    display: block;
+}
+
+#create-title {
+    text-align: center;
+}
+
+#create-to-do-details {
+    height: 4em;
+}
+
+.full-size {
+    width: 100%;
+    margin-top: 0.25em;
+    margin-bottom: 1em;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.add {
+    background-color: #8ecae6;
+    margin: 1em 0;
+    padding: 0.5em 1.75em;
+    border-radius: 16px;
+    border: 1px solid black;
+    transition: background-color 0.5s;
+}
+
+.add:hover {
+    cursor: pointer;
+}
+
+.menu-create {
+    background-color: #8ecae6;
+    border-radius: 16px;
+    padding: 0.5em 1em;
+    border: 1px solid black;
+}
+
+#display-all-to-dos {
+    display: flex;
+    flex-flow: column wrap;
+    flex-grow: 1;
+    color: #000;
+    margin-left: 23vw;
+}
+
+#display-search {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 1em 1.5em;
+    color: #495057;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+#noti-icon {
+    margin-left: auto;
+}
+
+#display-title {
+    display: flex;
+    align-items: center;
+    padding: 2em 1.5em;
+}
+
+.font-lg {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.filter {
+    padding: 0.5em;
+    margin-left: 0.25em;
+    background-color: #fff;
+    color: #9fa5aa;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#filter-date {
+    margin-left: auto;
+}
+
+#card-container {
+    margin: 2em 1.5em;
+    margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.card {
+    display: flex;
+    flex-flow: column wrap;
+    background-color: #fff;
+    flex-basis: 17vw;
+    padding: 1em;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    word-break: break-word;
+}
+
+.card-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status {
+    padding: 0.5em 0.75em;
+    border-radius: 32px;
+    width: fit-content;
+    height: fit-content;
+    background-color: #53cb53;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.65em;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.close {
+    cursor: pointer;
+    background: #d62828;
+    color: white;
+    border-radius: 50%;
+}
+
+.in-progress {
+    background-color: #219ebc;
+}
+
+.complete {
+    background-color: #53cb53;
+}
+
+.card-title {
+    font-weight: 600;
+    margin-top: 1em;
+    font-size: 18px;
+}
+
+.card-date {
+    margin-top: 0.2em;
+    font-size: 13px;
+    color: gray;
+}
+
+.card-desc {
+    margin-top: 1em;
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.card-category-div,
+.card-tag-div {
+    margin-top: 1.5em;
+}
+
+.card-category-title,
+.card-tag-title {
+    color: gray;
+    text-transform: uppercase;
+    font-size: smaller;
+    margin-bottom: 0.5em;
+}
+
+.card-category {
+    font-weight: 600;
+}
+
+.card-tag {
+    border: 1px solid blue;
+    border-radius: 2px;
+    color: blue;
+    background-color: #dbf9ff;
+    padding: 0.1em 0.4em;
+    margin-top: 0.5em;
+    margin-right: 0.5em;
+    text-transform: uppercase;
+    font-size: small;
+}
+
+
+@media(max-width:900px) {
+    body {
+        flex-flow: column nowrap;
+    }
+
+    #create-to-do {
+        position: initial;
+        max-width: 100vw;
+        height: auto;
+        padding: 1em;
+    }
+
+    #menu {
+        display: flex;
+        justify-content: end;
+    }
+
+    .collapsible {
+        display: none;
+        animation: fade_in 0.5s;
+    }
+
+    .collapsible.faded-in {
+        animation: fade_out 0.5s;
+    }
+
+    #card-container {
+        margin: 1em 0.5em;
+        justify-content: center;
+    }
+
+    .card {
+        flex-basis: 100%;
+        max-width: 100%;
+        margin: 0 1em;
+    }
+
+    #display-all-to-dos {
+        margin-left: 0;
+    }
+}
+
+
+@keyframes fade_in {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+
+
+#dev {
+    font-family: "Montserrat", sans-serif;
+    position: fixed;
+    font-size: 14px;
+    z-index: 2;
+    top: 83%;
+    left: 10px;
+    padding: 1em;
+    color: white;
+    background-color: black;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#dev a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    transition: ease all 0.3s;
+}
+
+#dev a:hover {
+    color: #ef5350;
+    text-decoration: underline;
+}
+
+#dev span {
+    display: inline-block;
+    transition: ease all 0.3s;
+    color: pink;
+}
+
+#dev span:hover {
+    transform: scale(1.2);
+}
