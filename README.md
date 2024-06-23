@@ -1,7 +1,9 @@
 
 # TODO App
 
-Welcome to the TODO App! This application is designed to help you manage your tasks efficiently. With features like notes, descriptions, tags, categories, and creation dates, you can keep track of everything you need to do. Easily update the status of your tasks from "In Progress" to "Complete" as you make progress.
+Welcome to the TODO App! 
+
+This application is designed to help you manage your tasks efficiently. With features like notes, descriptions, tags, categories, and creation dates, you can keep track of everything you need to do. Easily update the status of your tasks from "In Progress" to "Complete" as you make progress.
 
 ## Features
 
